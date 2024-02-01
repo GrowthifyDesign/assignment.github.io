@@ -1,33 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adewale Biopage</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container"> 
-    <header class="head">
-        <h1>ADEWALE BIOPAGE</h1>
-    </header>
-    <div id="bio-image">
-        <h3>Adewale Adeleke</h3>
-    <img src="images/adewale.jpg" alt="Profile pic" width="200px"> 
+    <div class="container">
+        <div class="box">      
+    <form action="https://api.web3forms.com/submit" method="POST"> <input type="hidden" name="apikey" value="345d5153-dc30-43dd-b154-56ac3651b7b6"> 
+
+        <label for="name">Name</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+          <div class="h-captcha" data-captcha="true"></div>
+          <div class="send">                       
+          <input type="submit"value="Submit form">
+        </div>
+          <form action="https://api.web3forms.com/submit" method="POST"></form>                                   
+        </div>
     </div>
-    <div id="main-bio">
-        <p>My love for coding drives me internally and I relish every <br> opportunity to tackle 
-            <br>the deepest technical challenges.</p>
     </div>
-    <div id="contact-info">
-        <h3>contact-info</h3>
-        <ul>
-            <li>Email: <a href="#index.html"><span class="mail">aawotayo@gmail.com</span></a></li>
-            <li>Github: <a href="#index.html"><span class="mail">Growthify Design</span></a></li></li>
-            <li>Portifolio:<a href="#index.html"><span class="mail">Front-End Developer</span></a></li></li>
-        </ul>
-    </div>
-    </div>
+    </form>
+    <script>
+        const form = document.getElementById('YOUR_FORM_ID');
+        
+        form.addEventListener('submit', function(e) {
+        
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+        
+            if (!hCaptcha) {
+                e.preventDefault();
+                alert("Please fill out captcha field")
+                return
+            }
+        });
+        </script><script>
+const form = document.getElementById('YOUR_FORM_ID');
+
+form.addEventListener('submit', function(e) {
+
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+    if (!hCaptcha) {
+        e.preventDefault();
+        alert("Please fill out captcha field")
+        return
+    }
+});
+</script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>  
 </body>
 </html>
